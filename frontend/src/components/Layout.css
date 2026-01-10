@@ -1,0 +1,148 @@
+@import "tailwindcss";
+
+:root {
+  --header-height: 140px;
+  --navbar-width: 300px;
+}
+
+.title {
+  position: sticky;
+  top: 0;
+  z-index: 1200;
+
+  height: var(--header-height);
+  background: linear-gradient(135deg, #4b2307, #A0522D, #D2691E);
+  color: #FEFAE0;
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 800;
+  text-align: center;
+  padding: 1.5rem 2rem;
+  letter-spacing: 1.5px;
+  border-bottom: 4px solid #D2691E;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
+.title::after {
+  content: "🌱 Agriculture Research Platform";
+  font-size: 0.9rem;
+  opacity: 0.9;
+  margin-top: 0.5rem;
+}
+
+.toggle-btn {
+  position: fixed;
+  top: calc(var(--header-height) + 6px); 
+  left: 0; 
+  z-index: 1100;
+
+  width: 44px;
+  height: 44px;
+
+  background: linear-gradient(135deg, #166534, #2D6A4F);
+  color: #FEFAE0;
+  border: 3px solid #22C55E;
+
+  border-radius: 0 10px 10px 0; 
+  font-size: 1.4rem;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: all 0.25s ease;
+}
+
+.toggle-right {
+  left: 0;
+}
+
+.toggle-left {
+  left: var(--navbar-width);
+}
+.toggle-btn:hover {
+  background: linear-gradient(135deg, #22C55E, #4ADE80);
+}
+
+
+
+.navbar {
+  position: fixed;
+  top: var(--header-height);
+  left: 0;
+  height: calc(100vh - var(--header-height));
+  width: var(--navbar-width);
+  background: linear-gradient(180deg, rgba(45,106,79,0.95), rgba(19,102,68,0.95));
+  transform: translateX(-100%);
+  transition: transform 0.4s ease;
+
+}
+
+.navbar-open { transform: translateX(0); }
+
+.nav-links {
+  background: rgba(255,255,255,0.65);
+  overflow: hidden;
+  border: 2px solid rgba(34,197,94,0.3);
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 1.1rem 1.2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #14532D;
+  text-decoration: none;
+  background: linear-gradient(
+    135deg,
+    rgba(240,253,244,0.95),
+    rgba(220,252,247,0.95)
+  );
+  border-bottom: 1px solid rgba(22,163,74,0.25);
+  transition: 0.25s ease;
+}
+
+.nav-item:last-child {
+  border-bottom: none;
+}
+
+.nav-item:hover {
+  background: linear-gradient(
+    135deg,
+    rgba(187,247,208,0.9),
+    rgba(134,239,172,0.9)
+  );
+  transform: translateX(6px);
+  box-shadow: inset 6px 0 0 #22C55E;
+}
+
+.nav-index {
+  font-weight: 700;
+  color: #16A34A;
+  min-width: 28px;
+}
+
+.nav-text {
+  flex: 1;
+}
+
+.content-area {
+  padding: 2.5rem;
+  min-height: calc(100vh - var(--header-height));
+  background: linear-gradient(135deg, #F0FDF4, #DCFBF7, #ECFDF5);
+  transition: margin-left 0.4s ease;
+}
+
+.content-open {
+  margin-left: var(--navbar-width);
+}
+
+@media (max-width: 768px) {
+  :root { --navbar-width: 260px; }
+}
