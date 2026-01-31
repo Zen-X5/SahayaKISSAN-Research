@@ -16,12 +16,14 @@ export default function Navbar({ isOpen, onClose }) {
 
         <NavLink to="/page3" className="nav-item" onClick={onClose}>
           <span className="nav-index">3.</span>
-          <span className="nav-text">y</span>
+          <span className="nav-text">Water Management and Irrigation</span>
         </NavLink>
 
         <NavLink to="/page4" className="nav-item" onClick={onClose}>
           <span className="nav-index">4.</span>
-          <span className="nav-text">Climate Change, Technology Gaps, and Farmer Distress in India</span>
+          <span className="nav-text">
+            Climate Change, Technology Gaps, and Farmer Distress in India
+          </span>
         </NavLink>
       </nav>
     </aside>
