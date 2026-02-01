@@ -5,11 +5,31 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   const teamMembers = [
-    { name: "Sahid Ahmed", role: "Full-Stack Developer", linkedin: "abc" },
-    { name: "Moumita Baishya", role: "UI/UX Designer", instagram: "abc" },
-    { name: "Aryan Choudhury", role: "Agriculture Data Scientist", linkedin: "abc" },
-    { name: "Rajdeep Mudiar", role: "Project Manager", linkedin: "abc" },
-    { name: "Amlandwip Das", role: "Project Manager", linkedin: "abc" },
+    {
+      name: "Sahid Ahmed",
+      role: "Backend Developer & IoT Engineer",
+      linkedin: "sahid-ahmed-428726329",
+    },
+    {
+      name: "Moumita Baishya",
+      role: " Frontend Developer & Backend (API)\nHandler",
+      linkedin: "moumita-baishya-613a0b327",
+    },
+    {
+      name: "Aryan Choudhury",
+      role: " UI/UX Designer\n& IoT Engineer",
+      linkedin: "aryan-choudhury-37a5b937a",
+    },
+    {
+      name: "Rajdeep Mudiar",
+      role: " IoT Engineer & AI/ML Specialist",
+      linkedin: "rajdeep-mudiar-795ba91b6",
+    },
+    {
+      name: "Amlandwip Das",
+      role: " Frontend Developer & Backend (API)\nHandler",
+      linkedin: "amlandwip-das-435555240",
+    },
   ];
 
   return (
@@ -19,7 +39,8 @@ export default function Footer() {
           <div className="footer__brand">
             <h3 className="footer__logo">🌱 SahayaKISSAN Research</h3>
             <p className="footer__tagline">
-              Empowering Indian farmers with precision agriculture research and technology
+              Empowering Indian farmers with precision agriculture research and
+              technology
             </p>
           </div>
         </div>
@@ -27,7 +48,11 @@ export default function Footer() {
         <div className="footer__section">
           <h4 className="footer__heading">Quick Links</h4>
           <ul className="footer__links">
-            <li><Link to="/" className="footer__link">Home</Link></li>
+            <li>
+              <Link to="/" className="footer__link">
+                Home
+              </Link>
+            </li>
           </ul>
         </div>
 
@@ -38,28 +63,15 @@ export default function Footer() {
               <div key={index} className="footer__member">
                 <div className="footer__member-info">
                   <span className="footer__member-name">{member.name}</span>
-                </div>
-                <div className="footer__member-social">
+                  <span className="footer__member-role">{member.role}</span>
                   {member.linkedin && (
-                    <a 
+                    <a
                       href={`https://linkedin.com/in/${member.linkedin}`}
-                      target="_blank" 
+                      target="_blank"
                       rel="noopener noreferrer"
-                      className="footer__social footer__linkedin"
-                      aria-label={`LinkedIn ${member.name}`}
+                      className="footer__member-linkedin"
                     >
-                      ↗
-                    </a>
-                  )}
-                  {member.instagram && (
-                    <a 
-                      href={`https://instagram.com/${member.instagram}`}
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="footer__social footer__instagram"
-                      aria-label={`Instagram ${member.name}`}
-                    >
-                      📷
+                      LinkedIn Profile ↗
                     </a>
                   )}
                 </div>
@@ -89,14 +101,18 @@ export default function Footer() {
       <div className="footer__bottom">
         <div className="footer__bottom-content">
           <p>
-            © {currentYear} SahayaKISSAN Research. 
-            Revolutionizing agriculture through research & innovation. 
-            All rights reserved. | Made with ❤️ in Assam, India
+            © {currentYear} SahayaKISSAN Research. Revolutionizing agriculture
+            through research & innovation. All rights reserved. | Made with ❤️
+            in Assam, India
           </p>
           <div className="footer__bottom-links">
-            <Link to="/privacy" className="footer__bottom-link">Privacy Policy</Link>
+            <Link to="/privacy" className="footer__bottom-link">
+              Privacy Policy
+            </Link>
             <span>|</span>
-            <Link to="/terms" className="footer__bottom-link">Terms of Service</Link>
+            <Link to="/terms" className="footer__bottom-link">
+              Terms of Service
+            </Link>
           </div>
         </div>
       </div>
